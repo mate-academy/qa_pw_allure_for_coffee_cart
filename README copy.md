@@ -1,4 +1,4 @@
-# Setup Allure for CoffeeCart
+# Practice task: Parametrized tests for CoffeeCart
 
 ## Preparation:
 1. Open the forked repo in VSCode.
@@ -6,8 +6,15 @@
 3. Run the installation commands `npm ci` & `npx playwright install`.
 
 ## Main task:
+1. Parametrize test cases for CoffeeCart to test different coffees
+- *coffeeAddedToCart.spec.js*
+- *coffeeAddedToTotal.spec.js*
+- *coffeeHasCorrectCost.spec.js*
+- *coffeeRemovedFromCart.spec.js*
+2. Use as en example:
+- `coffeeCupAddedToCart.spec.js`
+2. Re-run all your tests and make sure they pass after the updates. 
 
--- This will be the example project. 
 
 ## Task Reporting: 
 1. Add and commit all your updates. 
