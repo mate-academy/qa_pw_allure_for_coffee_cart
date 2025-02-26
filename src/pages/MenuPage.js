@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+const { expect, step } = require('@playwright/test');
 
 export class MenuPage {
   constructor(page) {
@@ -33,34 +33,50 @@ export class MenuPage {
   }
 
   async open() {
-    await this.page.goto('/');
+    await step('Open the Menu Page', async () => {
+      await this.page.goto('/');
+    });
   }
 
   async clickCoffeeCup(coffeeName) {
-    await this.coffeeCupLocator(coffeeName).click();
+    await step(`Click ${coffeeName} cup`, async () => {
+      await this.coffeeCupLocator(coffeeName).click();
+    });
   }
 
   async clickCartLink() {
-    await this.cartLink.click();
+    await step(`Click 'Cart' link`, async () => {
+      await this.cartLink.click();
+    });
   }
 
   async clickYesPromoButton() {
-    await this.yesPromoButton.click();
+    await step(`Click 'Yes' promo button`, async () => {
+      await this.yesPromoButton.click();
+    });
   }
 
   async clickNoPromoButton() {
-    await this.noPromoButton.click();
+    await step(`Click 'No' promo button`, async () => {
+      await this.noPromoButton.click();
+    });
   }
 
   async assertTotalCheckoutContainsValue(value) {
-    await expect(this.totalCheckout).toContainText(value);
+    await step(`Assert Total checkout has value: ${value}`, async () => {
+      await expect(this.totalCheckout).toContainText(value);
+    });
   }
 
   async assertCoffeeCupCostHasValue(coffee, value) {
-    await expect(this.coffeeCupCostLocator(coffee)).toContainText(value);
+    await step(`Assert ${coffee} cup cost has value: ${value}`, async () => {
+      await expect(this.coffeeCupCostLocator(coffee)).toContainText(value);
+    });
   }
 
   async assertPromoMessageIsVisible() {
-    await expect(this.promoMessage).toBeVisible();
+    await step(`Click 'No' promo button`, async () => {
+      await expect(this.promoMessage).toBeVisible();
+    });
   }
 }

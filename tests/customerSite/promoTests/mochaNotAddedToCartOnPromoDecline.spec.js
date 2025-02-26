@@ -1,10 +1,16 @@
-import { test } from '../_fixtures/fixtures';
-import { COFFEE_NAMES } from '../../src/constants';
+import { test } from '../../_fixtures/fixtures';
+import * as allure from 'allure-js-commons';
+import { COFFEE_NAMES } from '../../../src/constants';
 
-test('Assert discounted Mocha added to the Cart after promo accepting', async ({
+test('Discounted Mocha Not added to the Cart after promo rejecting', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.parentSuite(`Customer site`);
+  await allure.suite(`Promotion`);
+  await allure.subSuite('Reject the promo');
+  await allure.severity('normal');
+
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
   await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);

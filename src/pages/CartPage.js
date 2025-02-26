@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+const { expect, step } = require('@playwright/test');
 
 export class CartPage {
   constructor(page) {
@@ -46,54 +46,80 @@ export class CartPage {
   }
 
   async open() {
-    await this.page.goto('https://coffee-cart.app/cart');
+    await step(`Open the Cart Page`, async () => {
+      await this.page.goto('https://coffee-cart.app/cart');
+    });
   }
 
   async waitForLoading() {
-    await this.page.waitForURL('/cart');
+    await step(`Wait for Cart page to open`, async () => {
+      await this.page.waitForURL('/cart');
+    });
   }
 
   async reload() {
-    await this.page.reload();
+    await step(`Reload the Cart Page`, async () => {
+      await this.page.reload();
+    });
   }
 
   async clickCoffeeListItemRemoveAllButton(name) {
-    await this.coffeeListItemRemoveAllButton(name).click();
+    await step(`Click 'Remove All' button for ${name} list item`, async () => {
+      await this.coffeeListItemRemoveAllButton(name).click();
+    });
   }
 
   async clickCoffeeListItemRemoveOneButton(name) {
-    await this.coffeeListItemRemoveOneButton(name).click();
+    await step(`Click 'Remove One' button for ${name} list item`, async () => {
+      await this.coffeeListItemRemoveOneButton(name).click();
+    });
   }
 
   async clickCoffeeListItemAddOneButton(name) {
-    await this.coffeeListItemAddOneButton(name).click();
+    await step(`Click 'Add One' button for ${name} list item`, async () => {
+      await this.coffeeListItemAddOneButton(name).click();
+    });
   }
 
   async assertCoffeeItemIsVisible(name) {
-    await expect(this.coffeeItem(name)).toBeVisible();
+    await step(`Assert the ${name} list item is visible`, async () => {
+      await expect(this.coffeeItem(name)).toBeVisible();
+    });
   }
 
   async assertCoffeeItemIsHidden(name) {
-    await expect(this.coffeeItem(name)).toBeHidden();
+    await step(`Assert the ${name} coffee item is hidden`, async () => {
+      await expect(this.coffeeItem(name)).toBeHidden();
+    });
   }
 
   async assertCoffeeNameContainsCorrectText(name) {
-    await expect(this.coffeeListItemNameCell(name)).toBeVisible();
+    await step(`Assert the ${name} coffee item name is visible`, async () => {
+      await expect(this.coffeeListItemNameCell(name)).toBeVisible();
+    });
   }
 
   async assertCoffeeUnitContainsCorrectText(name, text) {
-    await expect(this.coffeeListItemUnitCell(name)).toContainText(text);
+    await step(`Assert the ${name} units has correct amount`, async () => {
+      await expect(this.coffeeListItemUnitCell(name)).toContainText(text);
+    });
   }
 
   async assertCoffeeTotalCostContainsCorrectText(name, text) {
-    await expect(this.coffeeListItemTotalCostCell(name)).toContainText(text);
+    await step(`Assert the ${name} total cost has correct amount`, async () => {
+      await expect(this.coffeeListItemTotalCostCell(name)).toContainText(text);
+    });
   }
 
   async assertNoCoffeeMessageIsVisible() {
-    await expect(this.notCoffeeMessage).toBeVisible();
+    await step(`Assert 'No coffee' message is visible`, async () => {
+      await expect(this.notCoffeeMessage).toBeVisible();
+    });
   }
 
   async assertTotalCheckoutContainsValue(value) {
-    await expect(this.totalCheckout).toContainText(value);
+    await step(`Assert Total Checkout has value ${value}`, async () => {
+      await expect(this.totalCheckout).toContainText(value);
+    });
   }
 }

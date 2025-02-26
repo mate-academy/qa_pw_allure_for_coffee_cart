@@ -1,5 +1,6 @@
-import { test } from '../_fixtures/fixtures';
-import { COFFEE_NAMES } from '../../src/constants';
+import { test } from '../../_fixtures/fixtures';
+import * as allure from 'allure-js-commons';
+import { COFFEE_NAMES } from '../../../src/constants';
 
 let testParameters = [];
 
@@ -8,10 +9,15 @@ for (const [key] of Object.entries(COFFEE_NAMES)) {
 }
 
 testParameters.forEach(({ coffee }) => {
-  test(`Check ${coffee} removed from Cart after clicking remove`, async ({
+  test(`The ${coffee} removed from Cart after clicking remove`, async ({
     cartPage,
     menuPage,
   }) => {
+    await allure.parentSuite(`Customer site`);
+    await allure.suite('Cart');
+    await allure.subSuite('The user should be able to clean the Cart');
+    await allure.severity('critical');
+
     await menuPage.open();
     await menuPage.clickCoffeeCup(coffee);
 
