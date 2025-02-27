@@ -1,2 +1,2 @@
-# This project contains example framework for 'Playwright & Allure report' topic. 
+### This project contains example framework for the "Playwright & Allure report" topic. 
 
