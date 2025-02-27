@@ -1,6 +1,6 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { COFFEE_NAMES } from '../../../src/constants';
+import { COFFEE_NAMES } from '../../src/constants';
 
 test('Cart cleaned after page refresh', async ({ cartPage, menuPage }) => {
   await allure.parentSuite(`Customer site`);

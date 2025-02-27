@@ -1,7 +1,7 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { totalPriceFormatStr } from '../../../src/common/priceFormatters';
-import { COFFEE_NAMES, COFFEE_PRICES } from '../../../src/constants';
+import { totalPriceFormatStr } from '../../src/common/priceFormatters';
+import { COFFEE_NAMES, COFFEE_PRICES } from '../../src/constants';
 
 let testParameters = [];
 

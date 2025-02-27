@@ -1,6 +1,6 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { COFFEE_NAMES } from '../../../src/constants';
+import { COFFEE_NAMES } from '../../src/constants';
 
 test('Discounted Mocha Not added to the Cart after promo rejecting', async ({
   cartPage,

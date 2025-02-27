@@ -1,6 +1,6 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { COFFEE_NAMES } from '../../../src/constants';
+import { COFFEE_NAMES } from '../../src/constants';
 
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
