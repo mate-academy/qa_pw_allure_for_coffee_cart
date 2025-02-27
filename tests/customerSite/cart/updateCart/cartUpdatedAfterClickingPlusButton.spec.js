@@ -1,7 +1,7 @@
-import { test } from '../_fixtures/fixtures';
+import { test } from '../../../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { priceFormatStr } from '../../src/common/priceFormatters';
-import { COFFEE_NAMES, COFFEE_PRICES } from '../../src/constants';
+import { priceFormatStr } from '../../../../src/common/priceFormatters';
+import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
 
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
@@ -9,9 +9,7 @@ test('Cart updated correctly after clicking plus for drinks', async ({
 }) => {
   await allure.parentSuite(`Customer site`);
   await allure.suite('Cart');
-  await allure.subSuite(
-    'The user should be able update the coffee units number in the Cart',
-  );
+  await allure.subSuite('Update the coffee units number in the Cart');
   await allure.severity('critical');
 
   const oneCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);

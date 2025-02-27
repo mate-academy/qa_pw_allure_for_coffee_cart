@@ -1,6 +1,6 @@
-import { test } from '../_fixtures/fixtures';
+import { test } from '../../../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { COFFEE_NAMES } from '../../src/constants';
+import { COFFEE_NAMES } from '../../../../src/constants';
 
 let testParameters = [];
 
@@ -15,7 +15,7 @@ testParameters.forEach(({ coffee }) => {
   }) => {
     await allure.parentSuite(`Customer site`);
     await allure.suite('Cart');
-    await allure.subSuite('The user should be able to clean the Cart');
+    await allure.subSuite('Update Cart');
     await allure.severity('critical');
 
     await menuPage.open();

@@ -1,6 +1,6 @@
-import { test } from '../_fixtures/fixtures';
+import { test } from '../../../_fixtures/fixtures';
 import * as allure from 'allure-js-commons';
-import { COFFEE_NAMES } from '../../src/constants';
+import { COFFEE_NAMES } from '../../../../src/constants';
 
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
@@ -8,9 +8,7 @@ test('Cart updated correctly after clicking minus for drinks', async ({
 }) => {
   await allure.parentSuite(`Customer site`);
   await allure.suite('Cart');
-  await allure.subSuite(
-    'The user should be able update the coffee units number in the Cart',
-  );
+  await allure.subSuite('Update the coffee units number in the Cart');
   await allure.severity('critical');
 
   await menuPage.open();
