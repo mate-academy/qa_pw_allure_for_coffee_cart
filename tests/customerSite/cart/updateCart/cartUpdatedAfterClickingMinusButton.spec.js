@@ -6,9 +6,6 @@ test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
-  await allure.parentSuite(`Customer site`);
-  await allure.suite('Cart');
-  await allure.subSuite('Update the coffee units number in the Cart');
   await allure.severity('critical');
 
   await menuPage.open();

@@ -16,9 +16,6 @@ export default defineConfig({
     baseURL: 'https://coffee-cart.app',
 
     testIdAttribute: 'data-test',
-
-    trace: 'retain-on-failure',
-    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */

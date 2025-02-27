@@ -13,9 +13,6 @@ testParameters.forEach(({ coffee }) => {
     cartPage,
     menuPage,
   }) => {
-    await allure.parentSuite(`Customer site`);
-    await allure.suite('Cart');
-    await allure.subSuite('Update Cart');
     await allure.severity('critical');
 
     await menuPage.open();

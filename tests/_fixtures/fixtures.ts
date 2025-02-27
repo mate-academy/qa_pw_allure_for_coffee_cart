@@ -1,10 +1,15 @@
 import { test as base } from '@playwright/test';
 import { MenuPage } from '../../src/pages/MenuPage';
 import { CartPage } from '../../src/pages/CartPage';
+import * as allure from 'allure-js-commons';
+import { parseTestTreeAttributes } from '../../src/common/allureHelpers';
+import { Logger } from '../../src/common/logger/Logger';
 
 export const test = base.extend<{
   cartPage;
   menuPage;
+  logger;
+  addAllureTestHierarhy;
 }>({
   cartPage: async ({ page }, use) => {
     const cartPage = new CartPage(page);
@@ -16,4 +21,31 @@ export const test = base.extend<{
 
     await use(menuPage);
   },
+  logger: [
+    async ({}, use) => {
+      const logger = new Logger('error');
+
+      await use(logger);
+    },
+    { scope: 'worker' },
+  ],
+  addAllureTestHierarhy: [
+    async ({ logger }, use, testInfo) => {
+      const fileName: string = testInfo.file.replace('/_', '/');
+
+      const [parentSuite, suite, subSuite] = parseTestTreeAttributes(
+        fileName,
+        logger,
+      );
+
+      await allure.parentSuite(parentSuite);
+      await allure.suite(suite);
+      if (subSuite) {
+        await allure.subSuite(subSuite);
+      }
+
+      await use('addAllureTestHierarhy');
+    },
+    { scope: 'test', auto: true },
+  ],
 });

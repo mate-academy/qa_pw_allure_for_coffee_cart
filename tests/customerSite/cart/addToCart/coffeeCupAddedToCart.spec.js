@@ -17,9 +17,6 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
     cartPage,
   }) => {
-    await allure.parentSuite(`Customer site`);
-    await allure.suite('Cart');
-    await allure.subSuite('Add to the Cart');
     await allure.severity('critical');
 
     const totalPriceStr = priceFormatStr(price);

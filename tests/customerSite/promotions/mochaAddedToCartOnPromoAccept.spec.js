@@ -7,9 +7,6 @@ test('Discounted Mocha added to the Cart after promo accepting', async ({
   cartPage,
   menuPage,
 }) => {
-  await allure.parentSuite(`Customer site`);
-  await allure.suite(`Promotion`);
-  await allure.subSuite('Accept the promo');
   await allure.severity('normal');
 
   const espressoPrice = priceFormatStr(COFFEE_PRICES.espresso);

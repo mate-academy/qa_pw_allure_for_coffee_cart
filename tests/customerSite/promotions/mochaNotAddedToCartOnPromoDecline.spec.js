@@ -6,9 +6,6 @@ test('Discounted Mocha Not added to the Cart after promo rejecting', async ({
   cartPage,
   menuPage,
 }) => {
-  await allure.parentSuite(`Customer site`);
-  await allure.suite(`Promotion`);
-  await allure.subSuite('Reject the promo');
   await allure.severity('normal');
 
   await menuPage.open();

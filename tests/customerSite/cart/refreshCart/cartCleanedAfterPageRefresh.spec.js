@@ -3,9 +3,6 @@ import * as allure from 'allure-js-commons';
 import { COFFEE_NAMES } from '../../../../src/constants';
 
 test('Cart cleaned after page refresh', async ({ cartPage, menuPage }) => {
-  await allure.parentSuite(`Customer site`);
-  await allure.suite('Cart');
-  await allure.subSuite('Refresh the Cart');
   await allure.severity('normal');
 
   await menuPage.open();
