@@ -12,7 +12,7 @@
 4. Generate the report using `allure serve allure-results`. 
 5. Pay attention to the tests hierarhy in the `Suites`, `Behaviours` and `Packages` tabs.
 6. Add allure hierarhy attributes: `parentSuite`, `suite` and `subSuite` for each test.
-7. Add `priority` attribute to each test. 
+7. Add `severity` attribute to each test. 
 8. Delete the `allure-results` folder.
 7. Trigger the tests with `npx playwright test`.
 8. Generate the report using `allure serve allure-results`. 
