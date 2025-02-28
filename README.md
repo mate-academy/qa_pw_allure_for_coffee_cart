@@ -22,6 +22,7 @@
 12. Trigger the tests with `npx playwright test`.
 13. Generate the report using `allure serve allure-results`. 
 14. Note that the hierarhy chagedin the `Behaviours` tab, while `Packages` remains the same. 
+15. Check that the tests' severities are displayed in the Graphs tab > Severity. 
 
 
 ## Task Reporting: 
