@@ -10,18 +10,18 @@
 2. Add allure reporter to the `playwright.config.js` file.
 3. Trigger the tests with `npx playwright test`.
 4. Generate the report using `allure serve allure-results`. 
-5. Pay attention to the tests hierarhy in the `Suites`, `Behaviours` and `Packages` tabs.
-6. Add allure hierarhy attributes: `parentSuite`, `suite` and `subSuite` for each test.
+5. Pay attention to the tests hierarchy in the `Suites`, `Behaviours` and `Packages` tabs.
+6. Add allure hierarchy attributes: `parentSuite`, `suite` and `subSuite` for each test.
 7. Add `severity` attribute to each test. 
 8. Delete the `allure-results` folder.
 7. Trigger the tests with `npx playwright test`.
 8. Generate the report using `allure serve allure-results`. 
-9. Note that the hierarhy chaged in the `Suites` tab, while `Behaviours` and `Packages` remains the same. 
-10. Add allure hierarhy attributes: `epic`, `feature` and `user story` for each test.
+9. Note that the hierarchy changed in the `Suites` tab, while `Behaviours` and `Packages` remains the same. 
+10. Add allure hierarchy attributes: `epic`, `feature` and `user story` for each test.
 11. Delete the `allure-results` folder.
 12. Trigger the tests with `npx playwright test`.
 13. Generate the report using `allure serve allure-results`. 
-14. Note that the hierarhy chagedin the `Behaviours` tab, while `Packages` remains the same. 
+14. Note that the hierarchy changed in the `Behaviours` tab, while `Packages` remains the same. 
 15. Check that the tests' severities are displayed in the Graphs tab > Severity. 
 
 
