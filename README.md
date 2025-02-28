@@ -8,6 +8,7 @@
 ## Main task:
 1. Install the `Allure adapter` and `command-line tool` using the instructions from the topic.
 2. Add allure reporter to the `playwright.config.js` file.
+3. Add `/allure-results/` to the `.gitignore` file.
 3. Trigger the tests with `npx playwright test`.
 4. Generate the report using `allure serve allure-results`. 
 5. Pay attention to the tests hierarchy in the `Suites`, `Behaviours` and `Packages` tabs.
