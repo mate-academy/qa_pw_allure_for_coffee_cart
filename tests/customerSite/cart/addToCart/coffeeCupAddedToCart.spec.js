@@ -1,9 +1,8 @@
 import { test } from '../../../_fixtures/fixtures';
-import * as allure from 'allure-js-commons';
 import {
   unitPriceFormatStr,
   priceFormatStr,
-} from '../../../../src/common/priceFormatters';
+} from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
 
 let testParameters = [];
@@ -17,8 +16,6 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
     cartPage,
   }) => {
-    await allure.severity('critical');
-
     const totalPriceStr = priceFormatStr(price);
     const unitPriceStr = unitPriceFormatStr(price, 1);
 

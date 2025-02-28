@@ -1,5 +1,4 @@
 import { test } from '../../../_fixtures/fixtures';
-import * as allure from 'allure-js-commons';
 import { COFFEE_NAMES } from '../../../../src/constants';
 
 let testParameters = [];
@@ -13,8 +12,6 @@ testParameters.forEach(({ coffee }) => {
     cartPage,
     menuPage,
   }) => {
-    await allure.severity('critical');
-
     await menuPage.open();
     await menuPage.clickCoffeeCup(coffee);
 
