@@ -3,33 +3,33 @@
 ## Preparation
 
 1. Open the forked repo in VSCode.
-2. Create a new branch by running `git checkout -b task_solution`.
-3. Run the installation commands: `npm ci` and `npx playwright install`.
+2. Create a new branch by running git checkout -b task_solution.
+3. Run the installation commands:
+
+    - `npm ci`
+    - `npx playwright install`
 
 ## Task
 
-1. Install the Allure Adapter and Command-Line Tool using the instructions from the topic.
-2. Add allure reporter to the `playwright.config.js` file.
+1. Install the Allure Adapter and Command-Line Tool using the instructions provided in the theory section.
+2. Add the Allure reporter to the `playwright.config.js` file.
 3. Add `/allure-results/` to the `.gitignore` file.
-3. Trigger the tests with `npx playwright test`.
-4. Generate the report using `allure serve allure-results`. 
-5. Pay attention to the tests hierarchy in the **Suites**, **Behaviours** and **Packages** tabs.
-6. Add allure hierarchy attributes: `parentSuite`, `suite`, and `subSuite` for each test.
-7. Add a `severity` attribute to each test. 
+4. Run the tests with `npx playwright test`.
+5. Generate a test report using `allure serve allure-results`. Note the test hierarchy in the **Suites**, **Behaviours**, and **Packages** tabs.
+6. Add Allure hierarchy attributes: `parentSuite`, `suite`, and `subSuite` for each test.
+7. Add a `severity` attribute to each test.
 8. Delete the `allure-results` folder.
-7. Trigger the tests with `npx playwright test`.
-8. Generate the report using `allure serve allure-results`. 
-9. Note that the hierarchy changed in the **Suites** tab, while **Behaviours** and **Packages** remains the same. 
-10. Add allure hierarchy attributes: `epic`, `feature`, and `user story` for each test.
-11. Delete the `allure-results` folder.
-12. Trigger the tests with `npx playwright test`.
-13. Generate the report using `allure serve allure-results`. 
-14. Note that the hierarchy changed in the **Behaviours** tab, while **Packages** remains the same. 
-15. Check that the tests' severities are displayed in the **Graphs** → **Severity** tab. 
+9. Run the tests again with `npx playwright test`.
+10. Regenerate a test report using `allure serve allure-results`. Note that the hierarchy in the **Suites** tab has changed, while **Behaviours** and **Packages** remained the same. .
+11. Add Allure hierarchy attributes: `epic`, `feature`, and `user story` for each test.
+12. Delete the `allure-results` folder.
+13. Run the tests again with `npx playwright test`.
+14. Regenerate a test report using `allure serve allure-results`. Note that the in the **Behaviours** tab has changed, while **Packages** remained the same.
+15. Check that the tests' severities are displayed in the **Graphs** → **Severity** tab.
 
 ## Task Reporting
 
-1. Add and commit all your updates. 
+1. Add and commit all your updates.
 2. Push the code to the origin.
-3. Create PR for your changes. 
-4. Fix all the suggestions from the code review until PR is approved.  
+3. Create a PR for your changes.
+4. Keep implementing suggestions from code review until your PR is approved.
