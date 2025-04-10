@@ -38,7 +38,7 @@ export class CartPage {
 
   async open() {
     await step(`Open the Cart Page`, async () => {
-      await this.page.goto('https://coffee-cart.app/cart');
+      await this.page.goto('/cart');
     });
   }
 
