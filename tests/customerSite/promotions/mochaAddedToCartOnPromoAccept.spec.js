@@ -1,11 +1,17 @@
 import { test } from '../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../src/common/helpers/priceFormatters';
-import { COFFEE_NAMES, COFFEE_PRICES } from '../../../src/constants';
+import { COFFEE_NAMES, COFFEE_PRICES, SEVERITY, FEATURE, EPIC } from '../../../src/constants';
+import * as allure from "allure-js-commons";
 
 test('Discounted Mocha added to the Cart after promo accepting', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.severity(SEVERITY.medium);
+  await allure.epic(EPIC.customerSite);
+  await allure.feature(FEATURE.promotions);
+  await allure.story('As a customer I want to verify that the discounted Mocha is added to the cart after accepting the promo message so I can take  additional coffee with discount');
+  
   const espressoPrice = priceFormatStr(COFFEE_PRICES.espresso);
   const discMochaPrice = priceFormatStr(COFFEE_PRICES.discountedMocha);
   const cappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
