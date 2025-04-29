@@ -22,3 +22,22 @@ export const COFFEE_PRICES = {
   espressoConPanna: 14,
   cafeBreve: 15,
 };
+
+export const SEVERITY = {
+  critical: 'critical',
+  high: 'high',
+  medium: 'medium',
+  low: 'low',
+}
+
+export const EPIC = {
+  adminSite: 'Admin Site',
+  customerSite: 'Customer Site',
+}
+
+export const FEATURE = {
+  editMenu: 'Edit Menu',
+  cart: 'Cart',
+  menu: 'Menu',
+  promotions: 'Promotions',
+}

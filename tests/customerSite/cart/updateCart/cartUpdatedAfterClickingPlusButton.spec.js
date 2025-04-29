@@ -1,11 +1,17 @@
 import { test } from '../../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
-import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import { COFFEE_NAMES, COFFEE_PRICES, SEVERITY, EPIC, FEATURE } from '../../../../src/constants';
+import * as allure from "allure-js-commons";
 
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.severity(SEVERITY.medium);
+  await allure.epic(EPIC.customerSite);
+  await allure.feature(FEATURE.cart);
+  await allure.story('As a customer I want to be able to add drinks to the cart by clicking the plus button');
+
   const oneCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
   const twoCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino * 2);
   const oneEspressoPrice = priceFormatStr(COFFEE_PRICES.espresso);
