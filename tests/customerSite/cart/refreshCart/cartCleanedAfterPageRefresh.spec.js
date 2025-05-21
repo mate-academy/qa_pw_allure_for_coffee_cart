@@ -1,7 +1,13 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 test('Cart cleaned after page refresh', async ({ cartPage, menuPage }) => {
+  await allure.parentSuite('Refresh Test');
+  await allure.suite(' No coffee cart test');
+  await allure.subSuite('Coffee flow');
+  await allure.severity(`minor`);
+
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
 
