@@ -4,7 +4,7 @@ import {
   priceFormatStr,
 } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
-import * as allure from 'allure-js-commons';
+import { allure } from 'allure-playwright';
 
 let testParameters = [];
 

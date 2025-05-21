@@ -1,5 +1,5 @@
 import { test } from '../../../_fixtures/fixtures';
-import * as allure from 'allure-js-commons';
+import { allure } from 'allure-playwright';
 
 test('An empty cart shows correct message', async ({ cartPage }) => {
   await allure.parentSuite('Cart Test');

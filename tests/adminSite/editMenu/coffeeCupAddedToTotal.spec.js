@@ -1,5 +1,5 @@
-import * as allure from 'allure-js-commons';
 import { test } from '../../_fixtures/fixtures';
+import { allure } from 'allure-playwright';
 
 test(`New coffee can be added to the  Menu`, async ({}) => {
   await allure.parentSuite('Menu Test');
