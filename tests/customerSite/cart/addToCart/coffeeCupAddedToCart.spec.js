@@ -15,9 +15,20 @@ testParameters.forEach(({ coffee, price }) => {
   test(`The ${coffee} correctly added to the Cart`, async ({
     menuPage,
     cartPage,
+    allure,
   }) => {
     const totalPriceStr = priceFormatStr(price);
     const unitPriceStr = unitPriceFormatStr(price, 1);
+
+    await allure.severity(`critical`);
+
+    await allure.parentSuite('castomer site');
+    await allure.suite('cart');
+    await allure.subSuite('add to cart');
+
+    await allure.epic(`'CoffeeCart' Customer site`);
+    await allure.feature('Cart');
+    await allure.story('New coffee can be added to the cart');
 
     await menuPage.open();
     await menuPage.clickCoffeeCup(coffee);
