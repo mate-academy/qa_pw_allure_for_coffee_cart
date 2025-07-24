@@ -1,7 +1,6 @@
 import { test } from '../../../_fixtures/fixtures';
 import { totalPriceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
-import * as allure from 'allure-js-commons';
 
 let testParameters = [];
 
@@ -12,6 +11,7 @@ for (const [key, value] of Object.entries(COFFEE_NAMES)) {
 testParameters.forEach(({ coffee, price }) => {
   test(`Total cost is updated after clicking the ${coffee} cup`, async ({
     menuPage,
+    allure,
   }) => {
     await allure.severity(`normal`);
 

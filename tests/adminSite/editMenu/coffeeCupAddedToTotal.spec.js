@@ -1,7 +1,6 @@
 import { test } from '../../_fixtures/fixtures';
-import * as allure from 'allure-js-commons';
 
-test(`New coffee can be added to the  Menu`, async ({}) => {
+test(`New coffee can be added to the  Menu`, async ({ allure }) => {
   await allure.severity(`normal`);
 
   await allure.epic(`'CoffeeCart' Admin site`);

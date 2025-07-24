@@ -1,7 +1,6 @@
 import { test } from '../../../_fixtures/fixtures';
-import * as allure from 'allure-js-commons';
 
-test('An empty cart shows correct message', async ({ cartPage }) => {
+test('An empty cart shows correct message', async ({ cartPage, allure }) => {
   await allure.severity(`trivial`);
 
   await allure.epic(`'CoffeeCart' Customer site`);

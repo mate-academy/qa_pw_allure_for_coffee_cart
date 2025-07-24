@@ -1,10 +1,10 @@
 import { test } from '../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../src/constants';
-import * as allure from 'allure-js-commons';
 
 test('Discounted Mocha Not added to the Cart after promo rejecting', async ({
   cartPage,
   menuPage,
+  allure,
 }) => {
   await allure.severity(`minor`);
 

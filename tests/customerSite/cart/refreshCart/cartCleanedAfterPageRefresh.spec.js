@@ -1,8 +1,11 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
-import * as allure from 'allure-js-commons';
 
-test('Cart cleaned after page refresh', async ({ cartPage, menuPage }) => {
+test('Cart cleaned after page refresh', async ({
+  cartPage,
+  menuPage,
+  allure,
+}) => {
   await allure.severity(`trivial`);
 
   await allure.epic(`'CoffeeCart' Customer site`);

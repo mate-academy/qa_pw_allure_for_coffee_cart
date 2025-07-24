@@ -1,6 +1,5 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
-import * as allure from 'allure-js-commons';
 
 let testParameters = [];
 
@@ -12,6 +11,7 @@ testParameters.forEach(({ coffee }) => {
   test(`The ${coffee} removed from Cart after clicking remove`, async ({
     cartPage,
     menuPage,
+    allure,
   }) => {
     await allure.severity(`minor`);
     await allure.epic(`'CoffeeCart' Customer site`);
