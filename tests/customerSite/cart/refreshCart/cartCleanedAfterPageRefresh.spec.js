@@ -1,11 +1,8 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
+import { allure } from 'allure-playwright';
 
-test('Cart cleaned after page refresh', async ({
-  cartPage,
-  menuPage,
-  allure,
-}) => {
+test('Cart cleaned after page refresh', async ({ cartPage, menuPage }) => {
   await allure.severity(`trivial`);
 
   await allure.epic(`'CoffeeCart' Customer site`);

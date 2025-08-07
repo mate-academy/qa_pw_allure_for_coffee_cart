@@ -1,11 +1,11 @@
 import { test } from '../../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import { allure } from 'allure-playwright';
 
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
-  allure,
 }) => {
   await allure.severity(`critical`);
   await allure.epic(`'CoffeeCart' Customer site`);

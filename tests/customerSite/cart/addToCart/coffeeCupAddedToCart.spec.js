@@ -4,6 +4,7 @@ import {
   priceFormatStr,
 } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import { allure } from 'allure-playwright';
 
 let testParameters = [];
 
@@ -15,7 +16,6 @@ testParameters.forEach(({ coffee, price }) => {
   test(`The ${coffee} correctly added to the Cart`, async ({
     menuPage,
     cartPage,
-    allure,
   }) => {
     await allure.severity(`normal`);
 

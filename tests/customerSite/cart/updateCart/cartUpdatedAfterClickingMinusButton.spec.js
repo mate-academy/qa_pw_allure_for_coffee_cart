@@ -1,10 +1,10 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
+import { allure } from 'allure-playwright';
 
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
   menuPage,
-  allure,
 }) => {
   await allure.severity(`minor`);
 
