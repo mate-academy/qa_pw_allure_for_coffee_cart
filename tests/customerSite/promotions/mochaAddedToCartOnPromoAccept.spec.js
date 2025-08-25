@@ -5,11 +5,22 @@ import { COFFEE_NAMES, COFFEE_PRICES } from '../../../src/constants';
 test('Discounted Mocha added to the Cart after promo accepting', async ({
   cartPage,
   menuPage,
+  allure,
 }) => {
   const espressoPrice = priceFormatStr(COFFEE_PRICES.espresso);
   const discMochaPrice = priceFormatStr(COFFEE_PRICES.discountedMocha);
   const cappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
   const americanoPrice = priceFormatStr(COFFEE_PRICES.americano);
+
+  await allure.severity(`normal`);
+
+  await allure.parentSuite('castomer site');
+  await allure.suite('promotions');
+  await allure.subSuite('mocha');
+
+  await allure.epic(`'CoffeeCart' Customer site`);
+  await allure.feature('Menu');
+  await allure.story('Discounted Mocha added to the Cart after promo accepting');
 
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);

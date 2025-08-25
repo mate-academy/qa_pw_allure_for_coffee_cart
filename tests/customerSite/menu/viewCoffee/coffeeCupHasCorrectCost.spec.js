@@ -9,8 +9,18 @@ for (const [key, value] of Object.entries(COFFEE_NAMES)) {
 }
 
 testParameters.forEach(({ coffee, price }) => {
-  test(`The ${coffee} cup has correct cost`, async ({ menuPage }) => {
+  test(`The ${coffee} cup has correct cost`, async ({ menuPage, allure }) => {
     const priceStr = priceFormatStr(price);
+
+    await allure.severity(`critical`);
+
+    await allure.parentSuite('castomer site');
+    await allure.suite('menu');
+    await allure.subSuite('view coffee');
+
+    await allure.epic(`'CoffeeCart' Customer site`);
+    await allure.feature('Menu');
+    await allure.story('The coffee cup has correct cost');
 
     await menuPage.open();
 

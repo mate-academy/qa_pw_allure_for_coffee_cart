@@ -4,7 +4,18 @@ import { COFFEE_NAMES } from '../../../../src/constants';
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
   menuPage,
+  allure,
 }) => {
+  await allure.severity(`normal`);
+
+  await allure.parentSuite('castomer site');
+  await allure.suite('cart');
+  await allure.subSuite('update cart');
+
+  await allure.epic(`'CoffeeCart' Customer site`);
+  await allure.feature('Cart');
+  await allure.story('Cart updated correctly after clicking minus for drinks');
+
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
   await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);

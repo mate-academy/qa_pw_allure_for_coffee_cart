@@ -5,6 +5,7 @@ import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
+  allure,
 }) => {
   const oneCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
   const twoCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino * 2);
@@ -13,6 +14,16 @@ test('Cart updated correctly after clicking plus for drinks', async ({
   const totalPriceNum =
     COFFEE_PRICES.cappuccino * 2 + COFFEE_PRICES.espresso * 2;
   const totalPrice = priceFormatStr(totalPriceNum);
+
+  await allure.severity(`normal`);
+
+  await allure.parentSuite('castomer site');
+  await allure.suite('cart');
+  await allure.subSuite('update cart');
+
+  await allure.epic(`'CoffeeCart' Customer site`);
+  await allure.feature('Cart');
+  await allure.story('Cart updated correctly after clicking plus for drinks');
 
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
