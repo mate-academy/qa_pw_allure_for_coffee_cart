@@ -12,9 +12,14 @@ for (const [key, value] of Object.entries(COFFEE_NAMES)) {
 testParameters.forEach(({ coffee, price }) => {
   test(`The ${coffee} cup has correct cost`, async ({ menuPage }) => {
     await allure.severity(`minor`);
+
+    await allure.parentSuite(`Customer site`);
+    await allure.suite('Menu');
+    await allure.subSuite('View Coffee');
+
     await allure.epic(`Customer site`);
     await allure.feature('Menu');
-    await allure.story(`The ${coffee} cup has correct cost`);
+    await allure.story('View Coffee');
 
     const priceStr = priceFormatStr(price);
 

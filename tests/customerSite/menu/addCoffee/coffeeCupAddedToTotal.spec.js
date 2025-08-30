@@ -14,9 +14,14 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
   }) => {
     await allure.severity(`minor`);
+
+    await allure.parentSuite(`Customer site`);
+    await allure.suite('Menu');
+    await allure.subSuite('Add Coffee');
+
     await allure.epic(`Customer site`);
     await allure.feature('Menu');
-    await allure.story(`Total cost is updated after clicking the ${coffee} cup`);
+    await allure.story('Add Coffee');
     
     const totalPriceStr = totalPriceFormatStr(price);
 
