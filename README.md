@@ -13,7 +13,7 @@
 
 1. Install the Allure Adapter and Command-Line Tool using the instructions provided in the theory section.
 2. Add the Allure reporter to the `playwright.config.js` file.
-3. Add `/allure-results/` to the `.gitignore` file.
+3. Add `/allure-results/` and `/allure-report/` to the `.gitignore` file.
 4. Add Allure hierarchy attributes: `parentSuite`, `suite`, and `subSuite` for each test.
 5. Add a `severity` attribute to each test.
 6. Run the tests with `npx playwright test`.
