@@ -3,11 +3,15 @@ import { MenuPage } from '../../src/pages/MenuPage';
 import { CartPage } from '../../src/pages/CartPage';
 import { Logger } from '../../src/common/logger/Logger';
 
-export const test = base.extend<{
-  cartPage;
-  menuPage;
-  logger;
-}>({
+export const test = base.extend<
+  {
+    cartPage;
+    menuPage;
+  },
+  {
+    logger;
+  }
+>({
   cartPage: async ({ page }, use) => {
     const cartPage = new CartPage(page);
 
