@@ -9,7 +9,7 @@ test('Cart updated correctly after clicking minus for drinks', async ({ cartPage
   allure.epic('Shopping Experience');
   allure.feature('Cart Update');
   allure.story('Decrement coffee quantity in cart');
-  allure.severity('major');
+  allure.severity('critical');
 
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
