@@ -10,7 +10,7 @@ test('Cart updated correctly after clicking plus for drinks', async ({ cartPage,
   allure.epic('Shopping Experience');
   allure.feature('Cart Update');
   allure.story('Increment coffee quantity in cart');
-  allure.severity('major');
+  allure.severity('critical');
 
   const cappuccinoPrice = COFFEE_PRICES.cappuccino;
   const espressoPrice = COFFEE_PRICES.espresso;
