@@ -15,7 +15,7 @@
 2. Add the Allure reporter to the `playwright.config.js` file.
 3. Add `/allure-results/` and `/allure-report/` to the `.gitignore` file.
 4. Add Allure hierarchy attributes: `parentSuite`, `suite`, and `subSuite` for each test.
-5. Add a `severity` attribute to each test.
+5. Add a `severity` attribute to each test. 
 6. Run the tests with `npx playwright test`.
 7. Generate a test report using `allure serve allure-results`. Note how the hierarchy in the **Suites** and  **Behaviours** tab looks like.
 8. Add Allure hierarchy attributes: `epic`, `feature`, and `user story` for each test.
