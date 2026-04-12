@@ -1,11 +1,30 @@
 import { test } from '../../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import {
+  epic,
+  feature,
+  parentSuite,
+  severity,
+  story,
+  subSuite,
+  suite,
+} from 'allure-js-commons';
 
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+
+  await parentSuite(`Customer site`);
+  await suite('Cart');
+  await subSuite('Update cart');
+  await severity('normal');
+
+  await epic('Customer site');
+  await feature('Cart');
+  await story('User is able to add a coffee to cart by clicking plus');
+
   const oneCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
   const twoCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino * 2);
   const oneEspressoPrice = priceFormatStr(COFFEE_PRICES.espresso);
