@@ -9,6 +9,9 @@ test('Cart updated correctly after clicking minus for drinks', async ({
   await allure.parentSuite(`Customer site`);
   await allure.suite('Cart');
   await allure.subSuite('Cart updated after clicking minus');
+  await allure.epic(`Customer site`);
+  await allure.feature('Cart');
+  await allure.story('Cart updated after clicking minus');
   await allure.severity(`normal`);
 
   await menuPage.open();

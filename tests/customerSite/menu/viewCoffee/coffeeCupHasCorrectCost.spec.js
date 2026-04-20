@@ -14,6 +14,9 @@ testParameters.forEach(({ coffee, price }) => {
     await allure.parentSuite(`Customer site`);
     await allure.suite('Menu');
     await allure.subSuite('Coffe has correct cost');
+    await allure.epic(`Customer site`);
+    await allure.feature('Menu');
+    await allure.story('Coffe has correct cost');
     await allure.severity(`critical`);
 
     const priceStr = priceFormatStr(price);
