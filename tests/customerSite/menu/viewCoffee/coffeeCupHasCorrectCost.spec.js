@@ -13,7 +13,7 @@ testParameters.forEach(({ coffee, price }) => {
   test(`The ${coffee} cup has correct cost`, async ({ menuPage }) => {
     await allure.parentSuite(`Customer site`);
     await allure.suite('Menu');
-    await allure.subSuite('Corrert cost');
+    await allure.subSuite('Correct cost');
 
     await allure.epic(`'CoffeeCart' Customer site`);
     await allure.feature('Menu');
