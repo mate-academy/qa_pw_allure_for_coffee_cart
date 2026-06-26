@@ -1,26 +1,34 @@
 import { test } from '../../../_fixtures/fixtures';
+import { setAllureMetadata } from '../../../_helpers/allureTestMetadata';
 import { COFFEE_NAMES } from '../../../../src/constants';
 
-test('Cart updated correctly after clicking minus for drinks', async ({
-  cartPage,
-  menuPage,
-}) => {
-  await menuPage.open();
-  await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
-  await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);
+test('Cart updated correctly after clicking minus for drinks', async ({ cartPage, menuPage }) => {
+    await setAllureMetadata({
+        parentSuite: 'Customer site',
+        suite: 'Cart',
+        subSuite: 'Update cart',
+        epic: 'Ordering coffee',
+        feature: 'Cart',
+        story: 'Decrease coffee quantity',
+        severity: 'critical',
+    });
 
-  await menuPage.clickCartLink();
-  await cartPage.waitForLoading();
+    await menuPage.open();
+    await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
+    await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);
 
-  await cartPage.assertCoffeeItemIsVisible(COFFEE_NAMES.espresso);
+    await menuPage.clickCartLink();
+    await cartPage.waitForLoading();
 
-  await cartPage.clickCoffeeListItemRemoveOneButton(COFFEE_NAMES.espresso);
+    await cartPage.assertCoffeeItemIsVisible(COFFEE_NAMES.espresso);
 
-  await cartPage.assertCoffeeItemIsHidden(COFFEE_NAMES.espresso);
-  await cartPage.assertCoffeeItemIsVisible(COFFEE_NAMES.cappuccino);
+    await cartPage.clickCoffeeListItemRemoveOneButton(COFFEE_NAMES.espresso);
 
-  await cartPage.clickCoffeeListItemRemoveOneButton(COFFEE_NAMES.cappuccino);
+    await cartPage.assertCoffeeItemIsHidden(COFFEE_NAMES.espresso);
+    await cartPage.assertCoffeeItemIsVisible(COFFEE_NAMES.cappuccino);
 
-  await cartPage.assertCoffeeItemIsHidden(COFFEE_NAMES.cappuccino);
-  await cartPage.assertNoCoffeeMessageIsVisible();
+    await cartPage.clickCoffeeListItemRemoveOneButton(COFFEE_NAMES.cappuccino);
+
+    await cartPage.assertCoffeeItemIsHidden(COFFEE_NAMES.cappuccino);
+    await cartPage.assertNoCoffeeMessageIsVisible();
 });
