@@ -2,14 +2,17 @@ import { test as base } from '@playwright/test';
 import { MenuPage } from '../../src/pages/MenuPage';
 import { CartPage } from '../../src/pages/CartPage';
 import { Logger } from '../../src/common/logger/Logger';
+import * as allure from 'allure-js-commons';
+import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 
 export const test = base.extend<
   {
-    cartPage;
-    menuPage;
+    cartPage: CartPage;
+    menuPage: MenuPage;
+    addAllureTestHierarchy: string;
   },
   {
-    logger;
+    logger: Logger;
   }
 >({
   cartPage: async ({ page }, use) => {
@@ -29,5 +32,28 @@ export const test = base.extend<
       await use(logger);
     },
     { scope: 'worker' },
+  ],
+  addAllureTestHierarchy: [
+    async ({ logger }, use, testInfo) => {
+      const fileName = testInfo.file;
+
+      const [parentSuite, suite, subSuite] = parseTestTreeHierarchy(
+        fileName,
+        logger,
+      );
+
+      await allure.parentSuite(parentSuite);
+      await allure.suite(suite);
+      await allure.epic(parentSuite);
+      await allure.feature(suite);
+
+      if (subSuite) {
+        await allure.subSuite(subSuite);
+        await allure.story(subSuite);
+      }
+
+      await use('addAllureTestHierarchy');
+    },
+    { scope: 'test', auto: true },
   ],
 });
