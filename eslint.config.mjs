@@ -5,6 +5,16 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/playwright-report/**',
+      '**/test-results/**',
+      '**/blob-report/**',
+      '**/allure-report/**',
+      '**/allure-results/**',
+    ],
+  },
   { languageOptions: { globals: globals.node } },
   eslintConfigPrettier,
   {
@@ -24,10 +34,6 @@ export default [
       ...playwright.configs['flat/recommended'].rules,
       'playwright/expect-expect': 'off',
     },
-    ignores: [
-      '**/node_modules/*',
-      'playwright.config.js',
-      '**/playwright-report/**',
-    ],
+    ignores: ['playwright.config.js'],
   },
 ];
