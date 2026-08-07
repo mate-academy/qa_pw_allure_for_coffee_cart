@@ -4,6 +4,7 @@ import {
   priceFormatStr,
 } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 let testParameters = [];
 
@@ -16,6 +17,14 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
     cartPage,
   }) => {
+    await allure.parentSuite('Customer Site');
+    await allure.suite('Cart');
+    await allure.subSuite('Add To Cart');
+    await allure.severity('blocker');
+    await allure.epic('Online Store');
+    await allure.feature('Shopping Cart');
+    await allure.story('Add items to cart');
+
     const totalPriceStr = priceFormatStr(price);
     const unitPriceStr = unitPriceFormatStr(price, 1);
 
