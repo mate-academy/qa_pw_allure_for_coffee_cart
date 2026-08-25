@@ -12,5 +12,5 @@ await allure.epic(`Admin site`);
 await allure.feature('Edit Menu');
 await allure.story('Coffee cup price added to Total');
 
-// // This is a fake example test.
+// This is a fake example test.
 });
