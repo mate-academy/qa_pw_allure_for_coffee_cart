@@ -1,3 +1,4 @@
+import * as allure from 'allure-js-commons';
 import { test } from '../../../_fixtures/fixtures';
 import {
   unitPriceFormatStr,
@@ -16,6 +17,16 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
     cartPage,
   }) => {
+
+    await allure.epic('Customer Site');
+    await allure.feature('Cart');
+    await allure.story('Add to Cart');
+
+    await allure.parentSuite('Customer Site');
+    await allure.suite('Cart');
+    await allure.subSuite('Add to Cart');
+    await allure.severity('critical');
+
     const totalPriceStr = priceFormatStr(price);
     const unitPriceStr = unitPriceFormatStr(price, 1);
 
