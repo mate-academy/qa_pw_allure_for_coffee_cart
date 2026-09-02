@@ -1,6 +1,7 @@
 import { test } from '../../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
@@ -14,6 +15,15 @@ test('Cart updated correctly after clicking plus for drinks', async ({
     COFFEE_PRICES.cappuccino * 2 + COFFEE_PRICES.espresso * 2;
   const totalPrice = priceFormatStr(totalPriceNum);
 
+  await allure.parentSuite(`Customer site`);
+  await allure.suite('Cart');
+  await allure.subSuite('Update cart');
+
+  await allure.epic('Customer site');
+  await allure.feature('Cart');
+  await allure.story('Increase coffee quantity in cart');
+
+  await allure.severity('normal');
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
   await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);

@@ -1,6 +1,7 @@
 import { test } from '../../../_fixtures/fixtures';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 let testParameters = [];
 
@@ -12,6 +13,15 @@ testParameters.forEach(({ coffee, price }) => {
   test(`The ${coffee} cup has correct cost`, async ({ menuPage }) => {
     const priceStr = priceFormatStr(price);
 
+    await allure.parentSuite(`Customer site`);
+    await allure.suite('Menu');
+    await allure.subSuite('View coffee');
+
+    await allure.epic('Customer site');
+    await allure.feature('Menu');
+    await allure.story('View coffee price');
+
+    await allure.severity('normal');
     await menuPage.open();
 
     await menuPage.assertCoffeeCupCostHasValue(coffee, priceStr);
