@@ -1,6 +1,7 @@
 import { test } from '../../../_fixtures/fixtures';
 import { totalPriceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 let testParameters = [];
 
@@ -14,6 +15,15 @@ testParameters.forEach(({ coffee, price }) => {
   }) => {
     const totalPriceStr = totalPriceFormatStr(price);
 
+    await allure.parentSuite(`Customer site`);
+    await allure.suite('Menu');
+    await allure.subSuite('Add coffee to total');
+
+    await allure.epic('Customer site');
+    await allure.feature('Menu');
+    await allure.story('Update total after adding coffee');
+
+    await allure.severity('normal');
     await menuPage.open();
     await menuPage.clickCoffeeCup(coffee);
 
