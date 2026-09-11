@@ -7,9 +7,9 @@ export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
-  workers: 1,
+  workers: 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['list']],
+  reporter: [['list'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
