@@ -11,7 +11,7 @@ test('Cart updated correctly after clicking minus for drinks', async ({
   await allure.suite('Cart');
   await allure.subSuite('Update cart');
 
-  await allure.epic(`'Customer site`);
+  await allure.epic(`Customer site`);
   await allure.feature('Cart');
   await allure.story('Update cart');
 
