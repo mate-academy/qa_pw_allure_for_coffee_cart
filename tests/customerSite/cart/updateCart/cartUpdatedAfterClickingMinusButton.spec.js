@@ -7,6 +7,11 @@ test('Cart updated correctly after clicking minus for drinks', async ({
   menuPage,
 }) => {
   await allure.severity(`critical`);
+
+  await allure.epic('Customer Site');
+  await allure.feature('Cart');
+  await allure.story('Add To Cart');
+
   await allure.parentSuite('Customer Site');
   await allure.suite('Cart');
   await allure.subSuite('Add To Cart');
