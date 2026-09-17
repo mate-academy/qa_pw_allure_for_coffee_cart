@@ -1,10 +1,15 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
+import * as allure from 'allure-playwright';
 
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.epic('Customer Site - Cart');
+  await allure.feature('Update Cart Tests');
+  await allure.story('Cart updated correctly after clicking minus for drinks');
+  await allure.severity(`normal`);
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
   await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);

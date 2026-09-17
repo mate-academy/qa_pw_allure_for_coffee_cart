@@ -1,5 +1,9 @@
 import { test } from '../../_fixtures/fixtures';
+import * as allure from 'allure-playwright';
 
 test(`New coffee can be added to the  Menu`, async ({}) => {
-  // This is a fake example test.
+  await allure.epic('Admin Site - Edit Menu');
+  await allure.feature('Edit Menu Tests');
+  await allure.story('New coffee can be added to the Menu');
+  await allure.severity(`minor`);
 });
