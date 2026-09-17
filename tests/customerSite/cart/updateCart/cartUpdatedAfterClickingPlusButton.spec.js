@@ -7,6 +7,11 @@ test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.parentSuite('Customer Site - Cart');
+  await allure.suite('Update Cart Tests');
+  await allure.subSuite(
+    'Cart updated correctly after clicking plus for drinks',
+  );
   await allure.epic('Customer Site - Cart');
   await allure.feature('Update Cart Tests');
   await allure.story('Cart updated correctly after clicking plus for drinks');
