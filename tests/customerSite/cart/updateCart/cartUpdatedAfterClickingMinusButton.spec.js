@@ -1,10 +1,19 @@
 import { test } from '../../../_fixtures/fixtures';
 import { COFFEE_NAMES } from '../../../../src/constants';
+import * as allure from 'allure-js-commons';
 
 test('Cart updated correctly after clicking minus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.parentSuite(`Customer site`);
+  await allure.suite('Cart');
+  await allure.subSuite('Empty cart');
+  await allure.severity(`minor`);
+  await allure.epic('Epic title');
+  await allure.feature('Feature title');
+  await allure.story('User story title');
+
   await menuPage.open();
   await menuPage.clickCoffeeCup(COFFEE_NAMES.cappuccino);
   await menuPage.clickCoffeeCup(COFFEE_NAMES.espresso);
