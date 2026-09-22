@@ -8,8 +8,10 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: false,
   workers: 1,
+  /* Retry failed tests on CI to absorb transient network/site flakiness (baseURL is a live public demo site) */
+  retries: process.env.CI ? 2 : 0,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['list']],
+  reporter: [['list'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
