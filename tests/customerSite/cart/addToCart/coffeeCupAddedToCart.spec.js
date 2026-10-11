@@ -1,11 +1,12 @@
 import { test } from '../../../_fixtures/fixtures';
+import { allure } from 'allure-playwright';
 import {
   unitPriceFormatStr,
   priceFormatStr,
 } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
 
-let testParameters = [];
+const testParameters = [];
 
 for (const [key, value] of Object.entries(COFFEE_NAMES)) {
   testParameters.push({ coffee: value, price: COFFEE_PRICES[key] });
@@ -16,6 +17,15 @@ testParameters.forEach(({ coffee, price }) => {
     menuPage,
     cartPage,
   }) => {
+    await allure.parentSuite('CoffeeCart');
+    await allure.suite('Customer Site');
+    await allure.subSuite('Add to Cart');
+    await allure.severity('critical');
+
+    await allure.epic('CoffeeCart Customer');
+    await allure.feature('Shopping Cart');
+    await allure.story('Add coffee to cart');
+
     const totalPriceStr = priceFormatStr(price);
     const unitPriceStr = unitPriceFormatStr(price, 1);
 

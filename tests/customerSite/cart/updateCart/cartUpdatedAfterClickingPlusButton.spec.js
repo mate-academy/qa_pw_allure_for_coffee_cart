@@ -1,4 +1,5 @@
 import { test } from '../../../_fixtures/fixtures';
+import { allure } from 'allure-playwright';
 import { priceFormatStr } from '../../../../src/common/helpers/priceFormatters';
 import { COFFEE_NAMES, COFFEE_PRICES } from '../../../../src/constants';
 
@@ -6,6 +7,15 @@ test('Cart updated correctly after clicking plus for drinks', async ({
   cartPage,
   menuPage,
 }) => {
+  await allure.parentSuite('CoffeeCart');
+  await allure.suite('Customer Site');
+  await allure.subSuite('Update Cart');
+  await allure.severity('critical');
+
+  await allure.epic('CoffeeCart Customer');
+  await allure.feature('Shopping Cart');
+  await allure.story('Increase coffee quantity');
+
   const oneCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino);
   const twoCappuccinoPrice = priceFormatStr(COFFEE_PRICES.cappuccino * 2);
   const oneEspressoPrice = priceFormatStr(COFFEE_PRICES.espresso);
