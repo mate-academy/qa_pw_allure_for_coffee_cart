@@ -15,7 +15,7 @@ testParameters.forEach(({ coffee, price }) => {
     await allure.suite('Menu');
     await allure.subSuite('View Coffee');
 
-    await allure.severity('Blocker');
+    await allure.severity('blocker');
 
     await allure.epic('Customer Site');
     await allure.feature('Menu');

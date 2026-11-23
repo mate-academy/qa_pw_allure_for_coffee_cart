@@ -11,7 +11,7 @@ test('Cart updated correctly after clicking plus for drinks', async ({
   await allure.suite('Cart');
   await allure.subSuite('Update Cart');
 
-  await allure.severity('Blocker');
+  await allure.severity('blocker');
 
   await allure.epic('Customer Site');
   await allure.feature('Cart');
